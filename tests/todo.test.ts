@@ -146,9 +146,6 @@ test("shows a link back to the 'TodoMVC: Vue' webiste", async ({page}) => {
   await page.goto('https://todomvc.com/examples/vue/dist/#/');
 
   const todoMvcLink = page.locator("a[href='http://todomvc.com']");
-  // const todoMvcLinks = page.getByRole("link", { name: "TodoMVC" });
-  // const firstTodoMvcLink = todoMvcLinks.first();
-  // await expect(firstTodoMvcLink).toBeVisible();
-  // const allTodoMvcLinks = await todoMvcLinks.all();
   await expect(todoMvcLink).toBeVisible();
+  await expect(todoMvcLink).toContainText("TodoMVC");
 });
